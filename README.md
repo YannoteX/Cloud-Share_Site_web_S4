@@ -19,3 +19,4 @@ pour plus tard
 - En tant qu'utilisateur je dois pouvoir créer un compte pour poster des images, ou contacter des artistes.
 - En tant qu'artiste je dois pouvoir créer une biographie personnalisée.
 - En tant qu'artiste je dois pouvoir choisir d'être contacté ou non par d'autres utilisateurs.
+- Système d'images payantes ?
