@@ -8,9 +8,9 @@ A voir pour la modération des images postées.
 
 ## Users stories :
 
-- En tant qu'utilisateur je dois pouvoir télécharger une ou des images.
-- En tant qu'utilisateur je dois pouvoir rechercher une image selon un thème donné.
-- En tant qu'utilisateur je dois pouvoir naviguer de manière fluide à travers les images.
+- 1 : En tant qu'utilisateur je dois pouvoir télécharger une ou des images.
+- 2 :En tant qu'utilisateur je dois pouvoir rechercher une image selon un thème donné.
+- 3 :En tant qu'utilisateur je dois pouvoir naviguer de manière fluide à travers les images.
 
 pour plus tard
 
