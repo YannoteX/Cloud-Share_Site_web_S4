@@ -1,19 +1,24 @@
 <?php
     $client = mysqli_connect('localhost', 'root', 'root', 'projet_site_web') or die('MySQL connect failed : ' . mysqli_connect_error() . "'");
 
-    function new_query($query){
-        /*
-        Effectue une nouvelle requête, ne fetch pas le résultat
-        in : $query => String (nouvelle requête)
-             global $client => client mysql
-        out : le résultat de la requête ou true , false si echec
-        */
+    function get_results($query, $types, $params) {
+
         global $client;
-        $result = mysqli_query($client, $query) or die(mysqli_error($client));
-        return $result;
+        $stmt = mysqli_prepare($client, $query);
+
+        mysqli_stmt_bind_param($stmt, $types, ...$params);
+
+        
+        $ok = mysqli_stmt_execute($stmt);
+        if($ok == false) {
+            return false;
+        }
+
+        return mysqli_stmt_get_result($stmt);
+    
     }
 
-    function fetch_result($result){
+    function fetch_results($result) {
         return mysqli_fetch_assoc($result);
     }
 
