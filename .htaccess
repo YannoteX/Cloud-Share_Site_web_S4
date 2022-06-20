@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule \/search$ API/search.php [NC,L]
