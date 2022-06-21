@@ -1,7 +1,2 @@
 RewriteEngine On
-RewriteRule ^search$ search/ [NC]
-RewriteRule ^search\/$ /API/search.php [NC]
-
-RewriteRule ^image\/$ image.html [NC]
-RewriteRule ^image$ image.html [NC]
-RewriteRule ^image\/([a-zA-Z0-9_\-\ ]+)$ image.html [NC]
+RewriteRule \/search$ API/search.php [NC,L]
