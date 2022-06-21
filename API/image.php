@@ -20,7 +20,7 @@
             echo json_encode(fetch_results($results));
         }
         else{
-            echo "null"
+            echo "null";
         }
 
     }

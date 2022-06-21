@@ -19,6 +19,9 @@
     }
 
     function fetch_results($result) {
+        if ($result == false){
+            return false;
+        }
         return mysqli_fetch_assoc($result);
     }
 

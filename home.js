@@ -23,14 +23,12 @@ $(document).ready(function()
 
 
 			for(let v=0; v<arrayJson.length;v++){
-				var imageI ='<img src="'+arrayJson.src+'"alt="'+arrayJson.NAME+'"/>';
+				var imageI ='<img src="'+arrayJson[v].src+'"alt="'+arrayJson[v].NAME+'"/>';
 				var image = '<div class="image">'+imageI+'</div>';
 				$("#images").append(image);
 
 
 			}
-
-			console.log(arrayJson);
 
 		});
 
