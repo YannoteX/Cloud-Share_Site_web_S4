@@ -3,7 +3,7 @@ $(document).ready(function()
 
 	$("#recherche").click(function(){
 		$.get('http://localhost/API/search.php?name='+$(".Search").val()  ,function(data){
-			console.log($(".Search").val());
+			$("#images").html("");
 
 			
 			data=data.replace(/\}\,\{/gm,"};{");
@@ -23,12 +23,14 @@ $(document).ready(function()
 
 
 			for(let v=0; v<arrayJson.length;v++){
-				var imageI ='<img src="'+arrayJson[v].src+'"alt="'+arrayJson[v].NAME+'"/>';
+				var imageI ='<img src="'+arrayJson[v].src+'"alt="'+arrayJson.name+'"/>';
 				var image = '<div class="image">'+imageI+'</div>';
 				$("#images").append(image);
 
 
 			}
+
+			
 
 		});
 
