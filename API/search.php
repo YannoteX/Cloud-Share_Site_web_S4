@@ -9,6 +9,9 @@
         $name = "";
         $tags = "";
 
+        $types = "";
+        $tab_mysql_parameter = array();
+
         if (isset($_GET["name"])) {
             $name = mysqli_real_escape_string($client, $_GET["name"]);
         }
@@ -20,7 +23,9 @@
         $query = "SELECT NAME, src FROM images WHERE ";
 
         if ($name !== ""){
-            $query .= "NAME like '%$name%'";
+            $query .= "NAME LIKE ?";
+            $types .= "s";
+            array_push($tab_mysql_parameter , "%$name%");
         }
 
         if ($name !== "" && $tags !== ""){
@@ -41,22 +46,34 @@
                     $skip = false;
                 }
                 else {
-                    $query .= " tags LIKE '%$tag%'";
+                    $query .= " tags LIKE ?";
+                    $types .= "s";
+                    array_push($tab_mysql_parameter, "%$tag%");
                     $or = true;
                 }
             }
-            $query .= ")";
+            $query .= ");";
+
         }
 
-        $result = new_query($query);
+        $results = get_results($query, $types, $tab_mysql_parameter);
 
-        $rows = array();
+        if ($results != false){
+            $rows = array();
+            $temp = array();
 
-        while($row = fetch_result($result)){
-            $rows[] = $row;
-        }
+            while($row = fetch_results($results)){
+                $temp["NAME"] = utf8_encode($row['NAME']);
+                $temp["src"] = utf8_encode($row['src']);
+                $rows[] = $temp;
+            }
 
         echo json_encode($rows);
+
+        }
+        else {
+            echo "null";
+        }
     }
 
 ?>
