@@ -114,20 +114,17 @@ body{
 
 }
 
-
+/* 
 
 
 /* IMAGES SECTION*/
 
-#images{
+section  #images #Conteneur{
     width: 100%;
-    height: auto;
     background-color: green;
-    display:flex;
     
 }
 
 .image{
     background-color: blue;
-    justify-content: flex-start;
 }
