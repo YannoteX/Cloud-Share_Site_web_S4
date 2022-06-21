@@ -1,9 +1,9 @@
 $(document).ready(function()
 {
 
-	$(".Search").keyup(function(){
-		$.get('http://localhost/API/search.php?NAME='+$(this).val()  ,function(data){
-			console.log($(this).val());
+	$("#recherche").click(function(){
+		$.get('http://localhost/API/search.php?name='+$(".Search").val()  ,function(data){
+			console.log($(".Search").val());
 
 			
 			data=data.replace(/\}\,\{/gm,"};{");
