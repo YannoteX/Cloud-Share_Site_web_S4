@@ -13,4 +13,7 @@ RewriteRule ^image\/$ image.html [NC]
 RewriteRule ^image$ image.html [NC]
 RewriteRule ^image\/([a-zA-Z0-9_\-\ ]+)$ image.html [NC]
 
+RewriteRule ^signup\/$ signup.html [NC]
+RewriteRule ^signup$ signup.html [NC] 
+
 RewriteRule ^$ index.html [NC]
