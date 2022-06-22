@@ -20,3 +20,10 @@ pour plus tard
 - En tant qu'artiste je dois pouvoir créer une biographie personnalisée.
 - En tant qu'artiste je dois pouvoir choisir d'être contacté ou non par d'autres utilisateurs.
 - Système d'images payantes ?
+
+##Urls du site
+
+- index, c'est la page par défaut qd on lance uwampp
+- localhost/user, c'est l'url qui charge user.html
+- localhost/login, c'est l'url qui charge connexion.html (il arrive)
+- localhost/signup, c'est l'url qui charge connexion.html (pas encore créé)
