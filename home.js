@@ -81,12 +81,8 @@ $(document).ready(function()
 	});
 
 	$(".image").click(function(){
-		if($(this).hasClass())
-
-
-
-
-
+		if($(this).hasClass()){
+		}
 
 
 	});
