@@ -1,8 +1,8 @@
 $(document).ready(function()
 {
-	console.log($.get("http://localhost/API/image.php?name="+getImageName()).src);
+
 	$.get("http://localhost/API/image.php?name="+getImageName() ,function(data){
-		console.log(data);
+
 		if(data==="null")
 		{
 			$("#Cont_img").html("<p> Nous n'avons rien trouver...</p>");
@@ -22,8 +22,8 @@ $(document).ready(function()
 				arrayJson.push(dict);
 
 			}
-			console.log(dict.OWNER);
-			console.log(dict);
+			console.log(dict.src);
+
 			$("#ici").attr("src",dict.src);
 			$("#name").text(dict.NAME);
 			$("#owner").attr("href","http://localhost/user/"+dict.OWNER);
