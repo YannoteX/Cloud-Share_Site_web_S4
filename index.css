@@ -124,7 +124,7 @@ body{
   flex-direction:column;
   justify-content: center;
   background-color: #E0E0E0;
-
+  bottom: 0;
 
 }
 
@@ -194,6 +194,30 @@ body{
   margin-top: 15px;
   text-align: center;
   font-size: 13px;
+
+}
+
+/******************* IMAGE HTML *********************/
+
+#body
+{
+  background-color: #708090;
+
+}
+
+#img_click{
+  display: flex;
+  justify-content: center;
+  background-color: #FFEBCD;
+  width: 100%;
+  border:solid 1px black;
+
+}
+
+#Cont_txt{
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
 
 }
 

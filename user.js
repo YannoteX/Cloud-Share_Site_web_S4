@@ -1,7 +1,7 @@
 $(document).ready(function()
 {
 	$.get("http://localhost/API/user.php?username="+getUserName(), function(data){
-
+		console.log(data);
 		if (data !== "null "){
 			$('#not-user').hide();
 			var user = $.parseJSON(data);
