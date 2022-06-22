@@ -23,7 +23,7 @@ $(document).ready(function()
 			}
 
 			email+= "</p>";
-
+			$("head>title").text("Cloud Share - "+user.NAME)
 			$("#content").append(name);
 			$("#content").append(icon);
 			$("#content").append(bio);
