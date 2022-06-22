@@ -94,7 +94,7 @@ body{
     flex-grow:0;
 }
 
-.image{
+.image {
     
     flex: 1 1 350px;
     width: 150px;
@@ -115,3 +115,85 @@ body{
 .image>img:hover{
   border:3px solid black;
 }
+
+/****** FOOTER *******/
+
+.footer{
+  padding: 40px 0;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  background-color: #E0E0E0;
+
+
+}
+
+.footer .social{
+  text-align: center;
+  padding-bottom: 25px;
+  color: black;
+
+}
+
+.footer .social a{
+  font-size: 24px;
+  color: inherit;
+  border:1px solid #ccc;
+  width: 40px;
+  height: 40px;
+  line-height: 38px;
+
+  text-align: center;
+  border-radius: 50%;
+  margin: 0 8px;
+  opacity: 0.75;
+
+
+}
+
+.footer .social a:hover{
+  opacity: 0.9;
+
+}
+
+
+.footer ul {
+  margin-top: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 0;
+
+}
+
+.footer ul li a {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.8;
+
+
+
+}
+
+.footer ul li{
+
+  padding: 0 15px;
+  display: flex;
+  justify-content: center;
+  align-self: flex-start;
+
+}
+
+
+.footer ul li a:hover{
+  opacity: 2;
+}
+
+.footer .copyright {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 13px;
+
+}
+

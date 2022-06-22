@@ -1,10 +1,12 @@
 $(document).ready(function()
 {
-
-	$("#recherche").click(function(){
-		$.get('http://localhost/API/search.php?name='+$(".Search").val()  ,function(data){
-			$("#images").html("");
-
+	$.get('http://localhost/API/search.php?name=c'  ,function(data){
+		$("#images").html("");
+		if(data==="null")
+		{
+			$("#images").html("<p> Nous n'avons rien trouver...</p>");
+		}
+		else{
 			
 			data=data.replace(/\}\,\{/gm,"};{");
 			data=data.replace("[","");
@@ -23,14 +25,55 @@ $(document).ready(function()
 
 
 			for(let v=0; v<arrayJson.length;v++){
-				var imageI ='<img src="'+arrayJson[v].src+'"alt="'+arrayJson.name+'"/>';
-				var image = '<div class="image">'+imageI+'</div>';
+				var imageI ='<img src="'+arrayJson[v].src+'"alt="'+arrayJson[v].NAME+'"/>';
+				var image = '<a class="image" href="http://localhost/image/'+arrayJson[v].NAME+'">'+imageI+'</a>';
 				$("#images").append(image);
 
 
 			}
+		}
+			
+
+	});
+
+
 
 			
+
+
+	$("#recherche").click(function(){
+		$.get('http://localhost/API/search.php?name='+$(".Search").val()  ,function(data){
+			$("#images").html("");
+			if(data==="null")
+			{
+				$("#images").html("<p> Nous n'avons rien trouver...</p>");
+			}
+			else {
+				data=data.replace(/\}\,\{/gm,"};{");
+				data=data.replace("[","");
+				data=data.replace("]","");
+
+				var array = data.split(";");
+				var arrayJson = [];  
+				var dict;
+
+				for(let i=0; i<array.length; i++){
+					dict = $.parseJSON(array[i]);
+					arrayJson.push(dict);
+
+				}
+
+
+
+				for(let v=0; v<arrayJson.length;v++){
+					var imageI ='<img src="'+arrayJson[v].src+'"alt="'+arrayJson[v].NAME+'"/>';
+					var image = '<a class="image" href="http://localhost/image/'+arrayJson[v].NAME+'">'+imageI+'</a>';
+					$("#images").append(image);
+
+
+				}
+
+			}
 
 		});
 
@@ -65,8 +108,8 @@ $(document).ready(function()
 
 
 			for(let v=0; v<arrayJson.length;v++){
-				var imageI ='<img src="'+arrayJson[v].src+'"alt="'+arrayJson.name+'"/>';
-				var image = '<div class="image">'+imageI+'</div>';
+				var imageI ='<img src="'+arrayJson[v].src+'"alt="'+arrayJson[v].NAME+'"/>';
+				var image = '<a class="image" href="http://localhost/image/'+arrayJson[v].NAME+'">'+imageI+'</a>';
 				$("#images").append(image);
 
 
@@ -80,13 +123,12 @@ $(document).ready(function()
 
 	});
 
-	$(".image").click(function(){
-		if($(this).hasClass()){
-		}
+	$(".image img").click(function(){
+		console.log("http://localhost/image/"+$(this).attr("alt"));
+		window.location.replace("http://localhost/image/"+$(".image img").attr("alt"));
+		
 
-
-	});
-
+	})
 
 
 });
