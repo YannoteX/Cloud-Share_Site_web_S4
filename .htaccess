@@ -6,8 +6,8 @@ RewriteRule ^user\/$ user.html [NC]
 RewriteRule ^user$ user.html [NC]
 RewriteRule ^user\/([a-zA-Z0-9_\-\ ]+)$ user.html [NC]
 
-RewriteRule ^connexion\/$ connexion.html [NC]
-RewriteRule ^connexion$ connexion.html [NC]
+RewriteRule ^login\/$ login.html [NC]
+RewriteRule ^login$ login.html [NC]
 
 RewriteRule ^image\/$ image.html [NC]
 RewriteRule ^image$ image.html [NC]

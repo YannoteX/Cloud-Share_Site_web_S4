@@ -1,7 +1,8 @@
 $(document).ready(function()
 {
-	console.log(getImageName())
-
+	$.get("http://localhost/API/image.php?name="+getImageName(),function(data){
+        console.log(data);
+	});
 });
 
 function getImageName(){
