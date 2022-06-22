@@ -123,12 +123,7 @@ $(document).ready(function()
 
 	});
 
-	$(".image img").click(function(){
-		console.log("http://localhost/image/"+$(this).attr("alt"));
-		window.location.replace("http://localhost/image/"+$(".image img").attr("alt"));
-		
-
-	})
+	
 
 
 });
