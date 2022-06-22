@@ -13,7 +13,7 @@ $(document).ready(function(){
 });
 
 function generateGenericHeader(){
-    var connexion = '<a href="http://localhost/connexion">connexion</a>';
+    var connexion = '<a href="http://localhost/login">connexion</a>';
     var inscription = '<a href="http://localhost/inscription">inscription</a>';
     var header ='<div class="header"><a href="http://localhost/" class="logo">Cloud Share</a><div class="header-right">'+inscription+connexion+'</div></div>';
 
