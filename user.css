@@ -86,11 +86,12 @@ a p {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
 }
 
 .icon
 {
-  border-radius: 50%;
+  border-radius: 10%;
   border:solid black 1px;
 }
 
