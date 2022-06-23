@@ -29,4 +29,4 @@ $(document).ready(function()
 
 function isConnected(data){
     return data !== "null";
-} 
+}
