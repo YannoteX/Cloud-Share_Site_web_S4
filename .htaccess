@@ -15,7 +15,7 @@ RewriteRule ^signup\/$ signup.html [NC]
 RewriteRule ^signup$ signup.html [NC]
 
 RewriteRule ^profile\/$ profile.html [NC]
-RewriteRule ^profilet$ profile.html [NC] 
+RewriteRule ^profile$ profile.html [NC] 
 
 RewriteRule ^profile\/account$ account.html [NC]
 RewriteRule ^profile\/post$ post.html [NC]

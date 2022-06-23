@@ -12,9 +12,9 @@ $(document).ready(function()
 			}
 			delete user.images;
 			
-			var name = "<p class='name'>"+ user.NAME +"</p>";
-			var icon = "<p class='icon'><img alt='user_"+user.NAME+"' src='"+ user.icon+"'/>";
-			var bio = "<p class='bio'>"+ user.bio +"</p>";
+			var name = "<p class='name'> Peusdo : "+ user.NAME +"</p>";
+			var icon = "<img class='icon' alt='user_"+user.NAME+"' src='"+ user.icon+"'/>";
+			var bio = "<p class='bio'> Bio : "+ user.bio +"</p>";
 			var email = "<p class='mail'>";
 			if (user.contactable === 1){
 				email += user.mail;
