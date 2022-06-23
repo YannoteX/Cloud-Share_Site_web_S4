@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>Cloud Share - poster une image</title>
+        <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="http://localhost/post.js"></script>
+        <script type="text/javascript" src="http://localhost/header.js"></script>
+        <link href="http://localhost/index.css" rel="stylesheet">
+        <link href="http://localhost/header.css" rel="stylesheet">
+    </head>
+    <body id="body">
+        <section id="header">
+        </section>
+        <!-- ne pas toucher à cette section, elle est remplie automatiquement par header.js.
+            Faire les modifs dans header.css-->
+
+        <a href="http://localhost/profile">retour au profil</a>
+
+        <section id="content">
+            <form id="uploadimage" action="" method="post" enctype="multipart/form-data" accept=".png,.jpg,.jpeg">
+                <div id="image_preview"><img id="previewing" src="noimage.png" /></div>
+                <hr id="line">
+                <div id="selectImage">
+                <label>Select Your Image</label><br/>
+                <input type="file" name="file" id="file" required />
+                <input type="submit" value="Upload" class="submit" />
+                </div>
+                </form>
+        </section>
+
+        <footer class="footer">
+            <div class="social">
+                <a href="https://www.instagram.com/" target="_blank"><img src="https://localhost/IMG/instagram.png"></a>
+                <a href="https://www.facebook.com/" target="_blank"><img src="https://localhost/IMG/facebook.png"></a>
+                <a href="https://twitter.com/home" target="_blank"><img src="https://localhost/IMG/twitter.png"></a>
+                <a href="#" target="_blank"><img src="https://localhost/IMG/snapchat.png"></a>
+            </div>
+        
+                
+            <ul>
+                <li>
+                    <a href="http://localhost/">Home</a>
+                </li>
+                <li>
+                    <a href="mailto:blabla@gmail.com">Contact Us !</a>
+                </li>
+                <li>
+                    <a href="#">Privacy Policy</a>
+                </li>
+        
+        
+            </ul>
+                
+            <p class="copyright">
+                Cloud SHARE @2022
+            </p>
+            
+        
+        </footer>
+    </body>
+</html>
