@@ -60,5 +60,27 @@
 
     }
 
-    //SELECT images.src, images.NAME FROM users JOIN images ON users.NAME = images.OWNER WHERE users.NAME = "website"//
+    header("Access-Control-Allow-Origin: *");
+    header("Access-Control-Allow-Methods: POST");
+    if ($_SERVER["REQUEST_METHOD"] === "POST"){
+        $data = $_POST;
+
+        
+        if ($data["function"] === "insert"){
+
+            
+            if (sizeof(fetch_results(get_results("SELECT ID FROM users WHERE NAME=? and mail=? and passwd=?", "sss", [$data["ID"], $data["email"], $data["password"]]))) === 0){
+                $tab_id = fetch_results(get_results("SELECT count(ID) FROM users WHERE ?", "i", [1]));
+                $id = $tab_id['count(ID)'] + 1 ;
+                
+                $query = fetch_results(get_results("INSERT IGNORE INTO users(ID, NAME, mail, passwd) VALUES (?, ?, ?, ?)", "isss", [$id, $data["ID"], $data["email"], $data["password"]]));
+                print_r($query);
+            }
+            else{
+                echo "error";
+            }
+        }
+    }
+
+
 ?> 

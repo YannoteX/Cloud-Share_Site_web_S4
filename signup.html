@@ -15,14 +15,17 @@
             <form method="post">
                 <label for="signID">Entrez un nom d'utilisateur :</label><br>
                 <input type="text" id="signID" placeholder="Username"><br>
-                <p class="errorsignID"></p>
+                <p id="errorsignID" class="error"></p>
+
                 <label for="signMail">Entrez votre email :</label><br>
-                <input type="text" id="signMail" placeholder="Mail"><br>
-                <p class="errorsignMail"></p>
+                <input type="email" id="signMail" placeholder="Mail"><br>
+                <p id="errorsignMail" class="error"></p>
+
                 <label for="signPass">Entrez votre mot de passe :</label><br>
                 <input type="password" id="signPass" placeholder="Password"><br>
-                <p class="errorsignPass"></p>
-                <p class="errorRequest"></p>
+                <p id="errorsignPass" class="error"></p>
+                <p id="errorRequest" class="error"></p>
+                
                 <input type="submit" value="submit">
             </form>
         </section>

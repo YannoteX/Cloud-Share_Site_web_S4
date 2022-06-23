@@ -29,14 +29,12 @@ function generateIDHeader(json){
     $('#deconnexion').click(function () {
         $.post("http://localhost/API/session.php", {}, function (data) {
            generateHeader();
-           console.log
         });
     });
 }
 
 function generateHeader(){
     $.get("http://localhost/API/session.php", function (data){
-        console.log(data);
         if (data !== 'null'){
             generateIDHeader($.parseJSON(data));
         }

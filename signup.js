@@ -1,5 +1,33 @@
 $(document).ready(function(){
 
+    $("#signID").keyup(function(){
+        if (checkID($(this).val()) === false){
+            $("#errorsignID").text("Le nom d'utilisateur doit faire entre 1 et 25 charactères parmis : a-z, A-Z, 0-9, .-_")
+        }
+        else{
+            $("#errorsignID").text("")
+        }
+    })
+
+    $("#signMail").keyup(function(){
+        if (checkMail($(this).val()) === false){
+            $("#errorsignMail").text("Ceci n'est pas un mail valide.")
+        }
+        else{
+            $("#errorsignMail").text("")
+        }
+    })
+
+    $("#signPass").keyup(function(){
+        if (checkPassword($(this).val()) === false){
+            $("#errorsignPass").text("Le mot de passe doit contenir entre 8 et 16 charactères avec au moins une lettre majuscule et minuscule, un chiffre, et un charactère spécial")
+        }
+        else{
+            $("#errorsignPass").text("")
+        }
+    })
+
+    
     $("form").submit(function (event){
         event.preventDefault();
 
@@ -11,27 +39,26 @@ $(document).ready(function(){
         email = $("#signMail").val();
         password = $("#signPass").val();
 
-        console.log(checkID(ID));
-        console.log(checkMail(email));
-        console.log(checkPassword(password));
-        
+        if (checkID(ID) && checkMail(email) && checkPassword(password)){
 
-        /*$.post("http://localhost/API/auth.php", {"ID":ID,"email":email,"password":password}, function(data){
-            if (data !== "error"){
-                $.post("http://localhost/API/session.php", $.parseJSON(data), function(data){
-                    window.location.replace("http://localhost/user");
-                })
-            }
-            else{
-                $('.error').text('Votre identifiant ou votre mot de passe est incorrect');
-            }
-        })*/
-    })
+            $.post("http://localhost/API/user.php", {"function":"insert","ID":ID,"email":email,"password":password}, function(data){
+
+                
+                if (data !== "error"){
+                    $.post("http://localhost/API/session.php", {"NAME":ID, "icon":"/ICON/default.png"} , function(data){
+                        window.location.replace("http://localhost/profile");
+                    });
+                }
+                else{
+                    $('.error').text('Le nom d\'utilisateur ou l\'email existe déjà.');
+                }
+            })
+        }
+    });
 });
 
 function checkID(ID){
-    var regex = new RegExp("")
-    return 
+    return /[a-zA-Z0-9\-\_\.]{1,25}/gm.test(ID);
 }
 
 function checkMail(mail){
@@ -39,5 +66,5 @@ function checkMail(mail){
 }
 
 function checkPassword(password){
-    return /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,16}$/gm.test(password);
+    return /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,16}$/gm.test(password);
 }
