@@ -1,6 +1,5 @@
 $(document).ready(function()
 {
-	console.log(getUserName());
 	$.get("http://localhost/API/user.php?username="+getUserName(), function(data){
 		console.log(data);
 		if (data !== "null "){

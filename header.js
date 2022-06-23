@@ -28,18 +28,7 @@ function generateIDHeader(json){
     $('#header').html(header);
     $('#deconnexion').click(function () {
         $.post("http://localhost/API/session.php", {}, function (data) {
-           generateHeader();
+            window.location.reload();
         });
-    });
-}
-
-function generateHeader(){
-    $.get("http://localhost/API/session.php", function (data){
-        if (data !== 'null'){
-            generateIDHeader($.parseJSON(data));
-        }
-        else{
-            generateGenericHeader();
-        }
     });
 }

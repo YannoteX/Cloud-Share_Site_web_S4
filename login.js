@@ -19,7 +19,7 @@ $(document).ready(function(){
         $.post("http://localhost/API/auth.php", {"ID":ID,"email":email,"password":password}, function(data){
             if (data !== "error"){
                 $.post("http://localhost/API/session.php", $.parseJSON(data), function(data){
-                    window.location.replace("http://localhost/user");
+                    window.location.replace("http://localhost/");
                 })
             }
             else{
