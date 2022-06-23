@@ -5,6 +5,10 @@
     background-color: #f1f1f1;
     padding: 20px 10px;
     margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
   }
   
   .header a {
@@ -19,8 +23,9 @@
   }
   
   .header a.logo {
-    font-size: 25px;
+    font-size: 40px;
     font-weight: bold;
+
   }
   
   .header a:hover {
@@ -35,6 +40,7 @@
   
   .header-right {
     float: right;
+
   }
   
   @media screen and (max-width: 500px) {

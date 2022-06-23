@@ -1,5 +1,6 @@
 $(document).ready(function()
 {
+	console.log(getUserName());
 	$.get("http://localhost/API/user.php?username="+getUserName(), function(data){
 		console.log(data);
 		if (data !== "null "){
@@ -29,7 +30,15 @@ $(document).ready(function()
 			$("#content").append(bio);
 			$("#content").append(email);
 
-			console.log(images);
+
+
+			console.log(images[0].src);
+
+			for (var i = 0; i < images.length; i++) {
+				var imageI ='<img src="'+images[i].src+'"alt="'+images[i].NAME+'"/>';
+				var image = '<div class="image">'+imageI+'</div>';
+				$("#affichage").append(image);
+			}
 
 		}
 		else{

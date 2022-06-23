@@ -21,14 +21,25 @@ function generateGenericHeader(){
 }
 
 function generateIDHeader(json){
-    var logo = '<p><img alt=icon-"' + json.NAME + '" src="' + json.icon + '"/></p>';
+    var logo = '<img alt=icon-"' + json.NAME + '" src="' + json.icon + '"/>';
     var nom = '<p>' + json.NAME + '</p>';
-    var deconnexion = '<p id="deconnexion"><a>deconnexion</a></p>'
-    var header ='<div class="header"><a href="http://localhost/" class="logo">Cloud Share</a><div class="header-right"><a href="http://localhost/profile">'+nom+logo+'</a>'+deconnexion+'</div></div>';
+    var deconnexion = '<a id="deconnexion">deconnexion</a>'
+    var header ='<div class="header"><a href="http://localhost/" class="logo">Cloud Share</a><div class="header-right"><a href="http://localhost/profile">'+nom+'</a>'+'<a href="http://localhost/profile">'+logo+'</a>'+deconnexion+'</div></div>';
     $('#header').html(header);
     $('#deconnexion').click(function () {
         $.post("http://localhost/API/session.php", {}, function (data) {
-            window.location.reload();
+           generateHeader();
         });
+    });
+}
+
+function generateHeader(){
+    $.get("http://localhost/API/session.php", function (data){
+        if (data !== 'null'){
+            generateIDHeader($.parseJSON(data));
+        }
+        else{
+            generateGenericHeader();
+        }
     });
 }
